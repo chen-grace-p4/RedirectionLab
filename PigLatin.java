@@ -3,20 +3,17 @@ import java.io.*;
 
 public class PigLatin {
   public static String pigLatinSimple(String s) {
-    Scanner in = new Scanner( System.in );
+    String word = s;
 
-    while (in.hasNext()) {
-      String line = in.nextLine();
-      Scanner wordScan = new Scanner(line);
-
-      while (wordScan.hasNext()) {
-        String word = wordScan.next();
-        if (word.substring(0,1)) {
-
-        }
-      }
-
-      System.out.println();
+    if (word.substring(0,1).equals("a") || word.substring(0,1).equals("e") || word.substring(0,1).equals("i") || word.substring(0,1).equals("o") || word.substring(0,1).equals("u")) {
+      word += "hay";
     }
+    else {
+      String first = word.substring(0,1);
+      word = word.substring(1,word.length()) + first;
+    }
+
+    return word;
+
   }
 }
