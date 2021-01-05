@@ -19,7 +19,7 @@ public class PigLatin {
     String[] dictlist = {"bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk", "sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr"};
     List<String> dict = Arrays.asList(dictlist);
 
-    if (dict.contains(s.substring(0,2))) {
+    if (s.length() > 1 && dict.contains(s.substring(0,2))) {
       s = s.substring(2,s.length()) + s.substring(0,2) + "ay";
     } else {
       s = pigLatinSimple(s);
@@ -41,5 +41,23 @@ public class PigLatin {
     }
 
     return pigLatin(s);
+  }
+
+  public static void main(String[]args) {
+    Scanner in = new Scanner( System.in );
+
+    while (in.hasNext()) {
+      String line = in.nextLine();
+      Scanner wordScan = new Scanner(line);
+
+      while (wordScan.hasNext()) {
+        String word = wordScan.next();
+        System.out.print(pigLatinBest(word));
+        System.out.print(" ");
+      }
+
+      System.out.println();
+    }
+
   }
 }
