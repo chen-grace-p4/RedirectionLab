@@ -21,11 +21,8 @@ public class PigLatin {
 
     if (dict.contains(s.substring(0,2))) {
       s = s.substring(2,s.length()) + s.substring(0,2) + "ay";
-    } else if (s.substring(0,1).equals("a") || s.substring(0,1).equals("e") || s.substring(0,1).equals("i") || s.substring(0,1).equals("o") || s.substring(0,1).equals("u")){
-      s += "hay";
     } else {
-      String first = s.substring(0,1);
-      s = s.substring(1, s.length() ) + first + "ay";
+      s = pigLatinSimple(s);
     }
     return s;
   }
@@ -35,6 +32,6 @@ public class PigLatin {
     if ( (first < 65) || (first > 90 && first < 97) || (first > 122)) {
       return s;
     }
-    return s + "WRONG";
+    return s;
   }
 }
