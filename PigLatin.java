@@ -32,6 +32,14 @@ public class PigLatin {
     if ( (first < 65) || (first > 90 && first < 97) || (first > 122)) {
       return s;
     }
-    return s;
+
+    char last = s.charAt(s.length()-1);
+    if ( (last < 48) || (last > 57 && last < 65) || (last > 90 && last < 97) || (last > 122)) {
+      String word = s.substring(0, s.length()-1);
+      s = pigLatin(word) + last;
+      return s;
+    }
+
+    return pigLatin(s);
   }
 }
