@@ -10,7 +10,7 @@ public class PigLatin {
     }
     else {
       String first = word.substring(0,1);
-      word = word.substring(1,word.length()) + first;
+      word = word.substring(1,word.length()) + first + "ay";
     }
 
     return word;
