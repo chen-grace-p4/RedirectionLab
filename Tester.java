@@ -15,6 +15,8 @@ public class Tester {
     // System.out.println(PigLatin.pigLatin("hello"));
 
     System.out.println(PigLatin.pigLatinBest("30hello"));
+    System.out.println(PigLatin.pigLatinBest("**hello"));
+    System.out.println(PigLatin.pigLatinBest("%hello"));
 
   }
 

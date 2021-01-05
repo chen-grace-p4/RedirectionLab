@@ -31,7 +31,8 @@ public class PigLatin {
   }
 
   public static String pigLatinBest(String s){
-    if (s.charAt(0) <= 57 && s.charAt(0) >= 48) {
+    char first = s.charAt(0);
+    if ( (first < 65) || (first > 90 && first < 97) || (first > 122)) {
       return s;
     }
     return s + "WRONG";
